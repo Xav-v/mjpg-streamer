@@ -129,4 +129,4 @@ void daemon_mode(void);
 
 void resolutions_help(const char * padding);
 void parse_resolution_opt(const char * optarg, int * width, int * height);
-
+int endswith(const char* haystack, const char* needle);
