@@ -195,7 +195,7 @@ int input_run(int id)
             return 1;
         }
 
-        rc = wd = inotify_add_watch(fd, folder, IN_CLOSE_WRITE | IN_MOVED_TO | IN_ONLYDIR);
+        rc = wd = inotify_add_watch(fd, folder, IN_CLOSE_WRITE);
         if(rc == -1) {
             perror("could not add watch");
             return 1;
