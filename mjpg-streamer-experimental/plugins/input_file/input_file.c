@@ -283,7 +283,7 @@ void *worker_thread(void *arg)
             snprintf(buffer, sizeof(buffer), "%s%s", folder, ev->name);
 
             /* check if the filename matches specified parameter (if given) */
-            if((filename != NULL) && (strcmp(filename, ev->name) != 0)) {
+            if((filename != NULL) && (endswith(filename, ev->name) != 0)) {
                 DBG("ignoring this change (specified filename does not match)\n");
                 continue;
             }
