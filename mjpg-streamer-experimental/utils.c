@@ -143,3 +143,22 @@ void resolutions_help(const char * padding) {
     fprintf(stderr, "\n%sor a custom value like the following" \
     "\n%sexample: 640x480\n", padding, padding);
 }
+
+/******************************************************************************
+Description.: Check file extension
+Input Value.: filename, ext 
+Return Value: int includes
+******************************************************************************/
+int endswith(const char* haystack, const char* needle)
+{
+    size_t hlen;
+    size_t nlen;
+    /* find the length of both arguments - 
+    if needle is longer than haystack, haystack can't end with needle */
+    hlen = strlen(haystack); 
+    nlen = strlen(needle);
+    if(nlen > hlen) return 0;
+
+    /* see if the end of haystack equals needle */
+    return (strcmp(&haystack[hlen-nlen], needle)) == 0;
+}
